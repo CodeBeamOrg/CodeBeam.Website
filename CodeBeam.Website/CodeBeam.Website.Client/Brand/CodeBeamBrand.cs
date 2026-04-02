@@ -1,7 +1,10 @@
 ﻿namespace CodeBeam.Website.Client.Brand;
 
-public static class CodeBeamBrand
+public static class CodeBeamBrands
 {
+    public static string CodeBeam = @"<svg style=""width:36px;height:36px"" viewBox=""0 0 24 24"">
+                                <path d=""M15.13,13.17,15.88,12l-1.54-.34,7.88-2.83A9.24,9.24,0,0,0,18.09,5a7.52,7.52,0,1,0,4.33,9.72,9.07,9.07,0,0,0,0-5.36Z""/><path d=""M.22,12a12,12,0,0,0,23.56,3.24,9.17,9.17,0,1,1-.21-7.15A12,12,0,0,0,.22,12""/></svg>";
+
     public static string UltimateAuth = @"<svg viewBox=""0 0 200 240"" xmlns=""http://www.w3.org/2000/svg"">
     <path fill=""#00072d""
           d=""M32.39,14.07H167.61c11.27,0,18,6.76,18,18V133.52c0,22.54-58.59,69.87-85.64,92.41-27-22.54-85.64-69.87-85.64-92.41V32.1C14.36,20.83,21.12,14.07,32.39,14.07Z""/>

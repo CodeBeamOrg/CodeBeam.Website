@@ -5,7 +5,7 @@
 <div class="relative" style="top: 4px; height: 8px">
     @if (!RendererInfo.IsInteractive)
     {
-        <MudProgressLinear Indeterminate="true" Color="Color.Primary" Striped="true" />
+        <MudProgressLinear Indeterminate="true" Color="Color.Primary" />
     }
 </div>
 <MudPage FullScreen="FullScreen.FullWithoutAppbar" Row="1" Column="1">
@@ -21,9 +21,8 @@
 
 <a id="vision"></a>
 <MudPage FullScreen="FullScreen.Full" Row="1" Column="1">
-    <MudContainer MaxWidth="MaxWidth.Medium" Class="mud-height-full d-flex align-center justify-center">
+    <MudContainer MaxWidth="MaxWidth.Medium" Class="mud-height-full d-flex align-center justify-center my-4">
         <MudStack Spacing="0">
-            
             <MudText Typo="Typo.h4" Color="Color.Primary">Our Vision</MudText>
             <MudDivider Class="my-8" Style="width: 120px" />
             <MudText>We believe software should be simple — even when the problem is not.</MudText>
@@ -33,17 +32,18 @@
     </MudContainer>
 </MudPage>
 
+<a id="products"></a>
 <div class="d-flex align-center justify-center" style="height: 20px;">
     <MudText Typo="Typo.h4" Color="Color.Primary" Align="Align.Center">Products</MudText>
 </div>
 
 <a id="ultimateauth"></a>
 <MudPage FullScreen="FullScreen.Full" Row="1" Column="1">
-    <MudContainer MaxWidth="MaxWidth.Large" Class="mud-height-full d-flex flex-column align-center justify-center">
+    <MudContainer MaxWidth="MaxWidth.Large" Class="mud-height-full d-flex flex-column align-center justify-center my-4">
         <MudGrid>
             <MudItem xs="12" md="6">
                 <MudStack Row="true" AlignItems="AlignItems.Center">
-                    <MudIcon Icon="@CodeBeamBrand.UltimateAuth" Color="Color.Primary" Style="height: 72px; width: 72px" />
+                    <MudIcon Icon="@CodeBeamBrands.UltimateAuth" Color="Color.Primary" Style="height: 72px; width: 72px" />
                     <MudStack Spacing="0">
                         <MudText Typo="Typo.h4" Color="Color.Primary">UltimateAuth</MudText>
                         <MudText>The modern unified Auth framework for .NET - Reimagined.</MudText>
@@ -88,8 +88,17 @@
         <MudStack Class="mt-8">
             <MudDivider />
             <MudStack Row="true" Justify="Justify.Center">
-                <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Primary" Href="https://github.com/CodeBeamOrg/UltimateAuth" Target="_blank" />
-                <MudIconButton Icon="@Icons.Material.Filled.Language" Color="Color.Primary" Href="https://ultimateauth.com/" Target="_blank" />
+                <MudTooltip Text="GitHub" Color="Color.Primary" Delay="300">
+                    <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Primary" Href="https://github.com/CodeBeamOrg/UltimateAuth" Target="_blank" />
+                </MudTooltip>
+
+                <MudTooltip Text="NuGet" Color="Color.Primary" Delay="300">
+                    <MudIconButton Icon="@Brands.NuGet" Color="Color.Primary" Href="https://www.nuget.org/packages?q=CodeBeam.UltimateAuth&includeComputedFrameworks=true&prerel=true" Target="_blank" />
+                </MudTooltip>
+
+                <MudTooltip Text="Web" Color="Color.Primary" Delay="300">
+                    <MudIconButton Icon="@Icons.Material.Filled.Language" Color="Color.Primary" Href="https://ultimateauth.com/" Target="_blank" />
+                </MudTooltip>
             </MudStack>
         </MudStack>
     </MudContainer>
@@ -97,13 +106,13 @@
 
 <a id="mudblazor-extensions"></a>
 <MudPage FullScreen="FullScreen.Full" Row="1" Column="1">
-    <MudContainer MaxWidth="MaxWidth.Large" Class="mud-height-full d-flex flex-column align-center justify-center">
+    <MudContainer MaxWidth="MaxWidth.Large" Class="mud-height-full d-flex flex-column align-center justify-center my-4">
         <MudGrid>
             <MudItem xs="12" md="6">
                 <MudStack Row="true" AlignItems="AlignItems.Center">
                     <MudIcon Icon="@Icons.Custom.Brands.MudBlazor" Color="Color.Primary" Style="height: 72px; width: 72px" />
                     <MudStack Spacing="0">
-                        <MudText Typo="Typo.h4" Color="Color.Primary">MudBlazor.Extensions</MudText>
+                        <MudText Typo="Typo.h4" Color="Color.Primary">MudBlazor Extensions</MudText>
                         <MudText>Powering MudBlazor with advanced components and utilities.</MudText>
                     </MudStack>
                 </MudStack>
@@ -113,32 +122,32 @@
                 <MudStack>
                     <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
                         <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Primary" Size="Size.Small" />
-                        <MudText Typo="Typo.body1">30+ components and utilities</MudText>
+                        <MudText Typo="Typo.body1" Color="Color.Primary">30+ components and utilities</MudText>
                     </MudStack>
 
                     <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
                         <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Primary" Size="Size.Small" />
-                        <MudText Typo="Typo.body1">Extends existing MudBlazor components without breaking simplicity</MudText>
+                        <MudText Typo="Typo.body1" Color="Color.Primary">Extends existing MudBlazor components without breaking simplicity</MudText>
                     </MudStack>
 
                     <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
                         <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Primary" Size="Size.Small" />
-                        <MudText Typo="Typo.body1">High-performance, production-ready UI building blocks</MudText>
+                        <MudText Typo="Typo.body1" Color="Color.Primary">High-performance, production-ready UI building blocks</MudText>
                     </MudStack>
 
                     <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
                         <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Primary" Size="Size.Small" />
-                        <MudText Typo="Typo.body1">Designed for real-world Blazor applications</MudText>
+                        <MudText Typo="Typo.body1" Color="Color.Primary">Designed for real-world Blazor applications</MudText>
                     </MudStack>
 
                     <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
                         <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Primary" Size="Size.Small" />
-                        <MudText Typo="Typo.body1">One of the most widely used extension libraries in the MudBlazor ecosystem</MudText>
+                        <MudText Typo="Typo.body1" Color="Color.Primary">One of the most widely used extension libraries in the MudBlazor ecosystem</MudText>
                     </MudStack>
 
                     <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
                         <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Primary" Size="Size.Small" />
-                        <MudText Typo="Typo.body1">Built by MudBlazor contributors</MudText>
+                        <MudText Typo="Typo.body1" Color="Color.Primary">Built by MudBlazor contributors</MudText>
                     </MudStack>
                 </MudStack>
             </MudItem>
@@ -162,3 +171,176 @@
         </MudStack>
     </MudContainer>
 </MudPage>
+
+<a id="bcss"></a>
+<MudPage FullScreen="FullScreen.Full" Row="1" Column="1">
+    <MudContainer MaxWidth="MaxWidth.Large" Class="mud-height-full d-flex flex-column align-center justify-center">
+        <MudGrid>
+            <MudItem xs="12" md="6">
+                <MudStack Row="true" AlignItems="AlignItems.Center">
+                    <MudImage Src="BCSS.jpg" Style="width: 72px" Fluid="true" />
+                    <MudStack Spacing="0">
+                        <MudText Typo="Typo.h4" Color="Color.Primary">BCSS</MudText>
+                        <MudText>Runtime CSS generation for modern applications.</MudText>
+                    </MudStack>
+                </MudStack>
+            </MudItem>
+
+            <MudItem xs="12" md="6">
+                <MudStack>
+
+                    <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
+                        <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Primary" Size="Size.Small" />
+                        <MudText Typo="Typo.body1" Color="Color.Primary">Write styles as classes — no build step required</MudText>
+                    </MudStack>
+
+                    <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
+                        <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Primary" Size="Size.Small" />
+                        <MudText Typo="Typo.body1" Color="Color.Primary">Fully dynamic values (w-101, p-13, etc.)</MudText>
+                    </MudStack>
+
+                    <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
+                        <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Primary" Size="Size.Small" />
+                        <MudText Typo="Typo.body1" Color="Color.Primary">Supports responsive prefixes and conditional styling</MudText>
+                    </MudStack>
+
+                    <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
+                        <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Primary" Size="Size.Small" />
+                        <MudText Typo="Typo.body1" Color="Color.Primary">No configuration, no compilation, no tooling required</MudText>
+                    </MudStack>
+
+                    <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
+                        <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Primary" Size="Size.Small" />
+                        <MudText Typo="Typo.body1" Color="Color.Primary">Designed for Blazor and runtime-driven UI systems</MudText>
+                    </MudStack>
+
+                    <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
+                        <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Primary" Size="Size.Small" />
+                        <MudText Typo="Typo.body1" Color="Color.Primary">Combines flexibility of CSS with speed of utility classes</MudText>
+                    </MudStack>
+
+                </MudStack>
+            </MudItem>
+        </MudGrid>
+
+        <MudStack Class="mt-8">
+            <MudDivider />
+            <MudStack Row="true" Justify="Justify.Center">
+
+                <MudTooltip Text="GitHub" Delay="300">
+                    <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Primary" Href="https://github.com/CodeBeamOrg/BCSS" Target="_blank" />
+                </MudTooltip>
+                
+                <MudTooltip Text="NuGet" Color="Color.Primary" Delay="300">
+                    <MudIconButton Icon="@Brands.NuGet" Color="Color.Primary" Href="https://www.nuget.org/packages?q=CodeBeam.BCSS&includeComputedFrameworks=true&prerel=true" Target="_blank" />
+                </MudTooltip>
+
+                <MudTooltip Text="Web" Delay="300">
+                    <MudIconButton Icon="@Icons.Material.Filled.Language" Color="Color.Primary" Href="https://bcss.codebeam.org/" Target="_blank" />
+                </MudTooltip>
+
+            </MudStack>
+        </MudStack>
+    </MudContainer>
+</MudPage>
+
+<a id="googleapis"></a>
+<MudPage FullScreen="FullScreen.Full" Row="1" Column="1">
+    <MudContainer MaxWidth="MaxWidth.Large" Class="mud-height-full d-flex flex-column align-center justify-center">
+        <MudGrid>
+            <MudItem xs="12" md="6">
+                <MudStack Row="true" AlignItems="AlignItems.Center">
+                    <MudIcon Icon="@Icons.Custom.Brands.Google" Color="Color.Primary" Style="height: 72px; width: 72px" />
+                    <MudStack Spacing="0">
+                        <MudText Typo="Typo.h4" Color="Color.Primary">GoogleApis Blazor</MudText>
+                        <MudText>Simplified Google API integration for Blazor applications.</MudText>
+                    </MudStack>
+                </MudStack>
+            </MudItem>
+
+            <MudItem xs="12" md="6">
+                <MudStack>
+
+                    <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
+                        <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Primary" Size="Size.Small" />
+                        <MudText Typo="Typo.body1">Simplified OAuth flow for Blazor environments</MudText>
+                    </MudStack>
+
+                    <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
+                        <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Primary" Size="Size.Small" />
+                        <MudText Typo="Typo.body1">Application-level API access without manual HTTP handling</MudText>
+                    </MudStack>
+
+                    <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
+                        <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Primary" Size="Size.Small" />
+                        <MudText Typo="Typo.body1">Strongly-typed responses instead of raw JSON</MudText>
+                    </MudStack>
+
+                    <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
+                        <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Primary" Size="Size.Small" />
+                        <MudText Typo="Typo.body1">Includes integrations like Google Calendar</MudText>
+                    </MudStack>
+
+                    <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
+                        <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Primary" Size="Size.Small" />
+                        <MudText Typo="Typo.body1">Focused and lightweight — not a full Google API coverage</MudText>
+                    </MudStack>
+
+                </MudStack>
+            </MudItem>
+        </MudGrid>
+
+        <MudStack Class="mt-8">
+            <MudDivider />
+            <MudStack Row="true" Justify="Justify.Center">
+                <MudTooltip Text="GitHub" Delay="300">
+                    <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Primary" Href="https://github.com/CodeBeamOrg/CodeBeam.GoogleApis.Blazor" Target="_blank" />
+                </MudTooltip>
+
+                <MudTooltip Text="NuGet" Delay="300">
+                    <MudIconButton Icon="@Brands.NuGet" Color="Color.Primary" Href="https://www.nuget.org/packages?q=CodeBeam.GoogleApis&includeComputedFrameworks=true&prerel=true" Target="_blank" />
+                </MudTooltip>
+            </MudStack>
+        </MudStack>
+    </MudContainer>
+</MudPage>
+
+<a id="donate"></a>
+<MudPage FullScreen="FullScreen.Full" Row="1" Column="1">
+    <MudContainer MaxWidth="MaxWidth.Medium" Class="mud-height-full d-flex flex-column align-center justify-center text-center">
+        <MudIcon Icon="@CodeBeamBrands.CodeBeam" Color="Color.Primary" Style="height: 96px; width: 96px" />
+        <MudText Typo="Typo.h4" Class="mt-4" Color="Color.Primary">
+            Support CodeBeam
+        </MudText>
+
+        <MudStack Spacing="2" Class="mud-width-full" Style="max-width: 720px">
+            <MudDivider Class="my-4" />
+
+            <MudText Typo="Typo.body1">
+                CodeBeam is built on open-source and shared freely with the community.
+            </MudText>
+
+            <MudText Typo="Typo.body1">
+                We focus on creating practical, real-world tools for developers — without noise, without shortcuts.
+            </MudText>
+
+            <MudText Typo="Typo.body1">
+                Your support helps us continue building, maintaining, and improving these tools.
+            </MudText>
+
+            <MudText Typo="Typo.body2" Class="mt-2" Style="opacity:0.7">
+                If you find value in what we build, consider supporting the organization.
+            </MudText>
+        </MudStack>
+
+        <MudStack Class="mt-6" Row="true" Justify="Justify.Center">
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" StartIcon="@Icons.Custom.Brands.GitHub" Href="https://github.com/sponsors/CodeBeamOrg" Target="_blank">
+                Sponsor on GitHub
+            </MudButton>
+        </MudStack>
+    </MudContainer>
+</MudPage>
+
+<div class="d-flex align-center justify-center pb-8">
+    <MudText Typo="Typo.subtitle2" Color="Color.Primary" Align="Align.Center">CodeBeam OpenSource. @DateTime.Now.Year</MudText>
+</div>

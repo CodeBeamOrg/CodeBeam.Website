@@ -3,8 +3,6 @@
 @inject NavigationManager Nav
 @inject IJSRuntime JS
 
-@rendermode @(new InteractiveAutoRenderMode(prerender: false))
-
 <MudThemeProvider @ref="@_mudThemeProvider" Theme="_codeBeamTheme" @bind-IsDarkMode="@_isDarkMode" />
 <MudPopoverProvider />
 <MudDialogProvider />
@@ -16,30 +14,31 @@
         <div class="cb-mobile">
             <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Primary" Edge="Edge.Start" OnClick="@(() => _isOpen = !_isOpen)" />
         </div>
-        <MudIcon Class="cursor-pointer" Icon="@_codeBeamSvg" Color="Color.Primary" @onclick="@(() => Nav.NavigateTo("/#home"))" />
+        <MudIcon Class="cursor-pointer" Icon="@CodeBeamBrands.CodeBeam" Color="Color.Primary" @onclick="@(() => Nav.NavigateTo("/#home"))" />
         <MudText Class="ml-2 cursor-pointer" Style="user-select: none" Typo="Typo.h6" Color="Color.Primary" Align="Align.Center" @onclick="@(() => Nav.NavigateTo("/#home"))">CodeBeam</MudText>
         <MudSpacer />
         <div class="cb-desktop">
             <MudStack Row="true" AlignItems="AlignItems.Center" Justify="Justify.Center" Spacing="6">
                 <MudMenu Class="@(!RendererInfo.IsInteractive ? "fade-right delay-1" : null)" ActivationEvent="MouseEvent.MouseOver" Dense="true" PopoverClass="mud-theme-primary" RelativeWidth="DropdownWidth.Relative">
                     <ActivatorContent>
-                        <MudText Class="pa-2" Color="Color.Primary"><MudLink Href="/#vision" Underline="Underline.None">Vision</MudLink></MudText>
+                        <MudText Color="Color.Primary"><MudLink Class="pa-2" Href="/#vision" Underline="Underline.None">Vision</MudLink></MudText>
                     </ActivatorContent>
                 </MudMenu>
                 <MudMenu Class="@(!RendererInfo.IsInteractive ? "fade-right delay-2" : null)" ActivationEvent="MouseEvent.MouseOver" Dense="true" PopoverClass="mud-theme-primary" AnchorOrigin="Origin.BottomCenter" TransformOrigin="Origin.TopCenter">
                     <ActivatorContent>
-                        <MudText Class="cb-primary-hover cb-transition pa-2" Color="Color.Primary">Products</MudText>
+                        <MudText Color="Color.Primary"><MudLink Class="cb-primary-hover cb-transition pa-2" Underline="Underline.None" Href="/#products">Products</MudLink></MudText>
                     </ActivatorContent>
                     <ChildContent>
                         <MudMenuItem Class="cb-menu-item" Href="/#ultimateauth">
                             <MudStack Class="mud-width-full" Row="true" AlignItems="AlignItems.Center">
-                                <MudIcon Icon="@CodeBeamBrand.UltimateAuth" />
+                                <MudIcon Icon="@CodeBeamBrands.UltimateAuth" />
                                 <MudStack Spacing="0">
                                     <MudText><b>UltimateAuth</b></MudText>
                                     <MudText Typo="Typo.subtitle2">Modern & Unified Auth Framework for .NET</MudText>
                                 </MudStack>
                             </MudStack>
                         </MudMenuItem>
+                        <MudDivider Class="my-2" />
                         <MudMenuItem Class="cb-menu-item mt-4" Href="/#mudblazor-extensions">
                             <MudStack Class="mud-width-full" Row="true" AlignItems="AlignItems.Center">
                                 <MudIcon Icon="@Icons.Custom.Brands.MudBlazor" />
@@ -49,7 +48,7 @@
                                 </MudStack>
                             </MudStack>
                         </MudMenuItem>
-                        <MudMenuItem Class="cb-menu-item mt-4">
+                        <MudMenuItem Class="cb-menu-item mt-4" Href="/#bcss">
                             <MudStack Class="mud-width-full" Row="true" AlignItems="AlignItems.Center">
                                 <MudImage Src="BCSS.jpg" Style="width: 24px" Fluid="true" />
                                 <MudStack Spacing="0">
@@ -58,7 +57,7 @@
                                 </MudStack>
                             </MudStack>
                         </MudMenuItem>
-                        <MudMenuItem Class="cb-menu-item mt-4">
+                        <MudMenuItem Class="cb-menu-item mt-4" Href="/#googleapis">
                             <MudStack Class="mud-width-full" Row="true" AlignItems="AlignItems.Center">
                                 <MudIcon Icon="@Icons.Material.Filled.Api" />
                                 <MudStack Spacing="0">
@@ -71,7 +70,7 @@
                 </MudMenu>
                 <MudMenu Class="@(!RendererInfo.IsInteractive ? "fade-right delay-3" : null)" ActivationEvent="MouseEvent.MouseOver" Dense="true" PopoverClass="mud-theme-primary" RelativeWidth="DropdownWidth.Relative">
                     <ActivatorContent>
-                        <MudText Class="antbar-primary-hover antbar-transition pa-2" Color="Color.Primary">Donate</MudText>
+                        <MudText Color="Color.Primary"><MudLink Class="pa-2" Underline="Underline.None" Href="/#donate">Donate</MudLink></MudText>
                     </ActivatorContent>
                 </MudMenu>
             </MudStack>
@@ -104,9 +103,6 @@
     private bool _isDarkMode = true;
     private MudThemeProvider _mudThemeProvider = null!;
     private bool _isOpen;
-
-    const string _codeBeamSvg = @"<svg style=""width:36px;height:36px"" viewBox=""0 0 24 24"">
-                                <path d=""M15.13,13.17,15.88,12l-1.54-.34,7.88-2.83A9.24,9.24,0,0,0,18.09,5a7.52,7.52,0,1,0,4.33,9.72,9.07,9.07,0,0,0,0-5.36Z""/><path d=""M.22,12a12,12,0,0,0,23.56,3.24,9.17,9.17,0,1,1-.21-7.15A12,12,0,0,0,.22,12""/></svg>";
 
     MudTheme _codeBeamTheme = new MudTheme()
     {
