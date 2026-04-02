@@ -21,14 +21,18 @@
 
 <a id="vision"></a>
 <MudPage FullScreen="FullScreen.Full" Row="1" Column="1">
-    <MudContainer MaxWidth="MaxWidth.Medium" Class="mud-height-full d-flex align-center justify-center my-4">
-        <MudStack Spacing="0">
-            <MudText Typo="Typo.h4" Color="Color.Primary">Our Vision</MudText>
-            <MudDivider Class="my-8" Style="width: 120px" />
-            <MudText>We believe software should be simple — even when the problem is not.</MudText>
-            <MudText Class="mt-4">At CodeBeam, we focus on building systems, not just libraries.</MudText>
-            <MudText>Reusable, practical, and designed for real-world applications.</MudText>
-        </MudStack>
+    <MudContainer MaxWidth="MaxWidth.ExtraSmall" Class="mud-height-full d-flex align-center justify-center my-4">
+        <MudPaper Elevation="0" Outlined="true" Class="pa-4" Style="background: transparent">
+            <MudStack Spacing="2">
+                <MudText Typo="Typo.h4" Color="Color.Primary">Our Vision</MudText>
+                <MudDivider Class="my-8" Style="width: 120px" />
+                <MudText>We believe software should be simple — even when the problem is not.</MudText>
+                <MudText Class="mt-4">At CodeBeam, we focus on building systems that developers can rely on in real-world applications.</MudText>
+                <MudText>Our focus is clarity over complexity, practicality over abstraction, and building tools that actually solve problems — not just describe them.</MudText>
+                <MudText>From UI extensions to authentication infrastructure, everything we build aims to reduce friction and give developers control.</MudText>
+                <MudText>Because good software is not just powerful — it is understandable, predictable, and usable.</MudText>
+            </MudStack>
+        </MudPaper>
     </MudContainer>
 </MudPage>
 
@@ -42,11 +46,48 @@
     <MudContainer MaxWidth="MaxWidth.Large" Class="mud-height-full d-flex flex-column align-center justify-center my-4">
         <MudGrid>
             <MudItem xs="12" md="6">
-                <MudStack Row="true" AlignItems="AlignItems.Center">
-                    <MudIcon Icon="@CodeBeamBrands.UltimateAuth" Color="Color.Primary" Style="height: 72px; width: 72px" />
-                    <MudStack Spacing="0">
-                        <MudText Typo="Typo.h4" Color="Color.Primary">UltimateAuth</MudText>
-                        <MudText>The modern unified Auth framework for .NET - Reimagined.</MudText>
+                <MudStack Class="mud-width-full mud-height-full" Justify="Justify.SpaceBetween">
+                    <MudStack Row="true" AlignItems="AlignItems.Center">
+                        <MudIcon Icon="@CodeBeamBrands.UltimateAuth" Color="Color.Primary" Style="height: 72px; width: 72px" />
+                        <MudStack Spacing="0">
+                            <MudText Typo="Typo.h4" Color="Color.Primary">UltimateAuth</MudText>
+                            <MudText>The modern unified Auth framework for .NET - Reimagined.</MudText>
+                        </MudStack>
+                    </MudStack>
+
+                    <MudStack Spacing="2" Class="mt-2">
+                        <MudStack Row="true" Spacing="1">
+                            <MudChip T="string" Color="Color.Primary" Size="Size.Small" Variant="Variant.Outlined">Authentication</MudChip>
+                            <MudChip T="string" Color="Color.Primary" Size="Size.Small" Variant="Variant.Outlined">Security</MudChip>
+                            <MudChip T="string" Color="Color.Primary" Size="Size.Small" Variant="Variant.Outlined">Session-based</MudChip>
+                            <MudChip T="string" Color="Color.Primary" Size="Size.Small" Variant="Variant.Outlined">Zero-trust</MudChip>
+                        </MudStack>
+
+                        <MudStack Row="true" Spacing="4" Class="mt-1">
+                            <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Spacing="2">
+                                <MudText Typo="Typo.h4" Color="Color.Primary">@Format(_repoStats?.UltimateAuth.Stars ?? 9)</MudText>
+                                <MudStack Row="true" AlignItems="AlignItems.Center" Spacing="2">
+                                    <MudIcon Icon="@Icons.Material.Filled.Star" Color="Color.Primary" Size="Size.Small" />
+                                    <MudText Typo="Typo.subtitle2">Stars</MudText>
+                                </MudStack>
+                            </MudStack>
+
+                            <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Spacing="2">
+                                <MudText Typo="Typo.h4" Color="Color.Primary">@Format(_repoStats?.UltimateAuth.Contributors ?? 1)</MudText>
+                                <MudStack Row="true" AlignItems="AlignItems.Center" Spacing="2">
+                                    <MudIcon Icon="@Icons.Material.Filled.People" Color="Color.Primary" Size="Size.Small" />
+                                    <MudText Typo="Typo.subtitle2">@GetContributorLabel(_repoStats?.UltimateAuth.Contributors ?? 1)</MudText>
+                                </MudStack>
+                            </MudStack>
+
+                            <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Spacing="2">
+                                <MudText Typo="Typo.h4" Color="Color.Primary">@Format((int?)_repoStats?.UltimateAuth.Downloads ?? 0)</MudText>
+                                <MudStack Row="true" AlignItems="AlignItems.Center" Spacing="2">
+                                    <MudIcon Icon="@Icons.Material.Filled.Download" Color="Color.Primary" Size="Size.Small" />
+                                    <MudText Typo="Typo.subtitle2">Downloads</MudText>
+                                </MudStack>
+                            </MudStack>
+                        </MudStack>
                     </MudStack>
                 </MudStack>
             </MudItem>
@@ -109,13 +150,52 @@
     <MudContainer MaxWidth="MaxWidth.Large" Class="mud-height-full d-flex flex-column align-center justify-center my-4">
         <MudGrid>
             <MudItem xs="12" md="6">
-                <MudStack Row="true" AlignItems="AlignItems.Center">
-                    <MudIcon Icon="@Icons.Custom.Brands.MudBlazor" Color="Color.Primary" Style="height: 72px; width: 72px" />
-                    <MudStack Spacing="0">
-                        <MudText Typo="Typo.h4" Color="Color.Primary">MudBlazor Extensions</MudText>
-                        <MudText>Powering MudBlazor with advanced components and utilities.</MudText>
+                <MudStack Class="mud-width-full mud-height-full" Justify="Justify.SpaceBetween">
+                    <MudStack Row="true" AlignItems="AlignItems.Center">
+                        <MudIcon Icon="@Icons.Custom.Brands.MudBlazor" Color="Color.Primary" Style="height: 72px; width: 72px" />
+                        <MudStack Spacing="0">
+                            <MudText Typo="Typo.h4" Color="Color.Primary">MudBlazor Extensions</MudText>
+                            <MudText>Powering MudBlazor with advanced components and utilities.</MudText>
+                        </MudStack>
+                    </MudStack>
+
+                    <MudStack Spacing="2" Class="mt-2">
+                        <MudStack Row="true" Spacing="1">
+                            <MudChip T="string" Color="Color.Primary" Size="Size.Small" Variant="Variant.Outlined">Component</MudChip>
+                            <MudChip T="string" Color="Color.Primary" Size="Size.Small" Variant="Variant.Outlined">UI</MudChip>
+                            <MudChip T="string" Color="Color.Primary" Size="Size.Small" Variant="Variant.Outlined">Extension</MudChip>
+                            <MudChip T="string" Color="Color.Primary" Size="Size.Small" Variant="Variant.Outlined">Utility</MudChip>
+                        </MudStack>
+
+                        <MudStack Row="true" Spacing="4" Class="mt-1">
+                            <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Spacing="2">
+                                <MudText Typo="Typo.h4" Color="Color.Primary">@Format(_repoStats?.MudExtensions.Stars ?? 570)</MudText>
+                                <MudStack Row="true" AlignItems="AlignItems.Center" Spacing="2">
+                                    <MudIcon Icon="@Icons.Material.Filled.Star" Color="Color.Primary" Size="Size.Small" />
+                                    <MudText Typo="Typo.subtitle2">Stars</MudText>
+                                </MudStack>
+                            </MudStack>
+
+                            <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Spacing="2">
+                                <MudText Typo="Typo.h4" Color="Color.Primary">@Format(_repoStats?.MudExtensions.Contributors ?? 42)</MudText>
+                                <MudStack Row="true" AlignItems="AlignItems.Center" Spacing="2">
+                                    <MudIcon Icon="@Icons.Material.Filled.People" Color="Color.Primary" Size="Size.Small" />
+                                    <MudText Typo="Typo.subtitle2">Contributors</MudText>
+                                </MudStack>
+                            </MudStack>
+
+                            <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Spacing="2">
+                                <MudText Typo="Typo.h4" Color="Color.Primary">@Format((int?)_repoStats?.MudExtensions.Downloads ?? 1900000)</MudText>
+                                <MudStack Row="true" AlignItems="AlignItems.Center" Spacing="2">
+                                    <MudIcon Icon="@Icons.Material.Filled.Download" Color="Color.Primary" Size="Size.Small" />
+                                    <MudText Typo="Typo.subtitle2">Downloads</MudText>
+                                </MudStack>
+                            </MudStack>
+                        </MudStack>
                     </MudStack>
                 </MudStack>
+
+                
             </MudItem>
 
             <MudItem xs="12" md="6">
@@ -177,11 +257,48 @@
     <MudContainer MaxWidth="MaxWidth.Large" Class="mud-height-full d-flex flex-column align-center justify-center">
         <MudGrid>
             <MudItem xs="12" md="6">
-                <MudStack Row="true" AlignItems="AlignItems.Center">
-                    <MudImage Src="BCSS.jpg" Style="width: 72px" Fluid="true" />
-                    <MudStack Spacing="0">
-                        <MudText Typo="Typo.h4" Color="Color.Primary">BCSS</MudText>
-                        <MudText>Runtime CSS generation for modern applications.</MudText>
+                <MudStack Class="mud-width-full mud-height-full" Justify="Justify.SpaceBetween">
+                    <MudStack Row="true" AlignItems="AlignItems.Center">
+                        <MudImage Src="BCSS.jpg" Style="width: 72px" Fluid="true" />
+                        <MudStack Spacing="0">
+                            <MudText Typo="Typo.h4" Color="Color.Primary">BCSS</MudText>
+                            <MudText>Runtime CSS generation for modern applications.</MudText>
+                        </MudStack>
+                    </MudStack>
+
+                    <MudStack Spacing="2" Class="mt-2">
+                        <MudStack Row="true" Spacing="1">
+                            <MudChip T="string" Color="Color.Primary" Size="Size.Small" Variant="Variant.Outlined">CSS</MudChip>
+                            <MudChip T="string" Color="Color.Primary" Size="Size.Small" Variant="Variant.Outlined">Generator</MudChip>
+                            <MudChip T="string" Color="Color.Primary" Size="Size.Small" Variant="Variant.Outlined">Runtime</MudChip>
+                            <MudChip T="string" Color="Color.Primary" Size="Size.Small" Variant="Variant.Outlined">Blazor</MudChip>
+                        </MudStack>
+
+                        <MudStack Row="true" Spacing="4" Class="mt-1">
+                            <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Spacing="2">
+                                <MudText Typo="Typo.h4" Color="Color.Primary">@Format(_repoStats?.Bcss.Stars ?? 14)</MudText>
+                                <MudStack Row="true" AlignItems="AlignItems.Center" Spacing="2">
+                                    <MudIcon Icon="@Icons.Material.Filled.Star" Color="Color.Primary" Size="Size.Small" />
+                                    <MudText Typo="Typo.subtitle2">Stars</MudText>
+                                </MudStack>
+                            </MudStack>
+
+                            <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Spacing="2">
+                                <MudText Typo="Typo.h4" Color="Color.Primary">@Format(_repoStats?.Bcss.Contributors ?? 1)</MudText>
+                                <MudStack Row="true" AlignItems="AlignItems.Center" Spacing="2">
+                                    <MudIcon Icon="@Icons.Material.Filled.People" Color="Color.Primary" Size="Size.Small" />
+                                    <MudText Typo="Typo.subtitle2">Contributors</MudText>
+                                </MudStack>
+                            </MudStack>
+
+                            <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Spacing="2">
+                                <MudText Typo="Typo.h4" Color="Color.Primary">@Format((int?)_repoStats?.Bcss.Downloads ?? 4300)</MudText>
+                                <MudStack Row="true" AlignItems="AlignItems.Center" Spacing="2">
+                                    <MudIcon Icon="@Icons.Material.Filled.Download" Color="Color.Primary" Size="Size.Small" />
+                                    <MudText Typo="Typo.subtitle2">Downloads</MudText>
+                                </MudStack>
+                            </MudStack>
+                        </MudStack>
                     </MudStack>
                 </MudStack>
             </MudItem>
