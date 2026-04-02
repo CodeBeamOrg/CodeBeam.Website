@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="CodeBeam.Website/CodeBeam.Website.Client/CodeBeam.Website.Client.csproj" />
+  <Project Path="CodeBeam.Website/CodeBeam.Website/CodeBeam.Website.csproj" />
+</Solution>
