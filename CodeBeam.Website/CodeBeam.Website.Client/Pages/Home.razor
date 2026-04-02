@@ -1,13 +1,164 @@
 ﻿@page "/"
+@using CodeBeam.Website.Client.Brand
 
+
+<div class="relative" style="top: 4px; height: 8px">
+    @if (!RendererInfo.IsInteractive)
+    {
+        <MudProgressLinear Indeterminate="true" Color="Color.Primary" Striped="true" />
+    }
+</div>
 <MudPage FullScreen="FullScreen.FullWithoutAppbar" Row="1" Column="1">
     <MudContainer MaxWidth="MaxWidth.Medium" Class="mud-height-full d-flex align-center justify-center">
-        <MudStack>
-            <MudText Typo="Typo.h4" Color="Color.Primary">CodeBeam</MudText>
-            <MudText Class="mt-n4" Typo="Typo.h6">Where a Code becomes useful</MudText>
-            <MudDivider Class="my-4" Style="width: 120px" />
-            <MudText>Powered by its simplicity. Focused on real-world problems. OpenSource.</MudText>
-            <MudText>We create practical systems and tools for modern .NET applications.</MudText>
+        <MudStack Spacing="0">
+            <MudText Class="@(!RendererInfo.IsInteractive ? "fade-up delay-1" : null)" Typo="Typo.h4" Color="Color.Primary">CodeBeam</MudText>
+            <MudText Class="@(!RendererInfo.IsInteractive ? "fade-up delay-2" : null)" Typo="Typo.h6">Where a Code becomes useful</MudText>
+            <MudDivider Class="my-8" Style="width: 120px" />
+            <MudText Class="@(!RendererInfo.IsInteractive ? "fade-up delay-4" : null)">Powered by its simplicity. Focused on real-world problems. OpenSource.</MudText>
+        </MudStack>
+    </MudContainer>
+</MudPage>
+
+<a id="vision"></a>
+<MudPage FullScreen="FullScreen.Full" Row="1" Column="1">
+    <MudContainer MaxWidth="MaxWidth.Medium" Class="mud-height-full d-flex align-center justify-center">
+        <MudStack Spacing="0">
+            
+            <MudText Typo="Typo.h4" Color="Color.Primary">Our Vision</MudText>
+            <MudDivider Class="my-8" Style="width: 120px" />
+            <MudText>We believe software should be simple — even when the problem is not.</MudText>
+            <MudText Class="mt-4">At CodeBeam, we focus on building systems, not just libraries.</MudText>
+            <MudText>Reusable, practical, and designed for real-world applications.</MudText>
+        </MudStack>
+    </MudContainer>
+</MudPage>
+
+<div class="d-flex align-center justify-center" style="height: 20px;">
+    <MudText Typo="Typo.h4" Color="Color.Primary" Align="Align.Center">Products</MudText>
+</div>
+
+<a id="ultimateauth"></a>
+<MudPage FullScreen="FullScreen.Full" Row="1" Column="1">
+    <MudContainer MaxWidth="MaxWidth.Large" Class="mud-height-full d-flex flex-column align-center justify-center">
+        <MudGrid>
+            <MudItem xs="12" md="6">
+                <MudStack Row="true" AlignItems="AlignItems.Center">
+                    <MudIcon Icon="@CodeBeamBrand.UltimateAuth" Color="Color.Primary" Style="height: 72px; width: 72px" />
+                    <MudStack Spacing="0">
+                        <MudText Typo="Typo.h4" Color="Color.Primary">UltimateAuth</MudText>
+                        <MudText>The modern unified Auth framework for .NET - Reimagined.</MudText>
+                    </MudStack>
+                </MudStack>
+            </MudItem>
+
+            <MudItem xs="12" md="6">
+                <MudStack>
+                    <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
+                        <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Primary" Size="Size.Small" />
+                        <MudText Typo="Typo.body1" Color="Color.Primary">Flow-based authentication instead of endpoint-driven logic</MudText>
+                    </MudStack>
+                    <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
+                        <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Primary" Size="Size.Small" />
+                        <MudText Typo="Typo.body1" Color="Color.Primary">Session-first architecture with chain & device awareness</MudText>
+                    </MudStack>
+                    <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
+                        <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Primary" Size="Size.Small" />
+                        <MudText Typo="Typo.body1" Color="Color.Primary">Built-in refresh, rotation and reauthentication model</MudText>
+                    </MudStack>
+                    <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
+                        <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Primary" Size="Size.Small" />
+                        <MudText Typo="Typo.body1" Color="Color.Primary">Plugin-based domain system (Users, Credentials, Authorization)</MudText>
+                    </MudStack>
+                    <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
+                        <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Primary" Size="Size.Small" />
+                        <MudText Typo="Typo.body1" Color="Color.Primary">Unified client API for application-level Auth usage</MudText>
+                    </MudStack>
+                    <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
+                        <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Primary" Size="Size.Small" />
+                        <MudText Typo="Typo.body1" Color="Color.Primary">Policy-driven authorization pipeline</MudText>
+                    </MudStack>
+                    <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
+                        <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Primary" Size="Size.Small" />
+                        <MudText Typo="Typo.body1" Color="Color.Primary">Designed for zero-trust security, not just token validation</MudText>
+                    </MudStack>
+                </MudStack>
+            </MudItem>
+        </MudGrid>
+
+        <MudStack Class="mt-8">
+            <MudDivider />
+            <MudStack Row="true" Justify="Justify.Center">
+                <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Primary" Href="https://github.com/CodeBeamOrg/UltimateAuth" Target="_blank" />
+                <MudIconButton Icon="@Icons.Material.Filled.Language" Color="Color.Primary" Href="https://ultimateauth.com/" Target="_blank" />
+            </MudStack>
+        </MudStack>
+    </MudContainer>
+</MudPage>
+
+<a id="mudblazor-extensions"></a>
+<MudPage FullScreen="FullScreen.Full" Row="1" Column="1">
+    <MudContainer MaxWidth="MaxWidth.Large" Class="mud-height-full d-flex flex-column align-center justify-center">
+        <MudGrid>
+            <MudItem xs="12" md="6">
+                <MudStack Row="true" AlignItems="AlignItems.Center">
+                    <MudIcon Icon="@Icons.Custom.Brands.MudBlazor" Color="Color.Primary" Style="height: 72px; width: 72px" />
+                    <MudStack Spacing="0">
+                        <MudText Typo="Typo.h4" Color="Color.Primary">MudBlazor.Extensions</MudText>
+                        <MudText>Powering MudBlazor with advanced components and utilities.</MudText>
+                    </MudStack>
+                </MudStack>
+            </MudItem>
+
+            <MudItem xs="12" md="6">
+                <MudStack>
+                    <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
+                        <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Primary" Size="Size.Small" />
+                        <MudText Typo="Typo.body1">30+ components and utilities</MudText>
+                    </MudStack>
+
+                    <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
+                        <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Primary" Size="Size.Small" />
+                        <MudText Typo="Typo.body1">Extends existing MudBlazor components without breaking simplicity</MudText>
+                    </MudStack>
+
+                    <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
+                        <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Primary" Size="Size.Small" />
+                        <MudText Typo="Typo.body1">High-performance, production-ready UI building blocks</MudText>
+                    </MudStack>
+
+                    <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
+                        <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Primary" Size="Size.Small" />
+                        <MudText Typo="Typo.body1">Designed for real-world Blazor applications</MudText>
+                    </MudStack>
+
+                    <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
+                        <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Primary" Size="Size.Small" />
+                        <MudText Typo="Typo.body1">One of the most widely used extension libraries in the MudBlazor ecosystem</MudText>
+                    </MudStack>
+
+                    <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
+                        <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Primary" Size="Size.Small" />
+                        <MudText Typo="Typo.body1">Built by MudBlazor contributors</MudText>
+                    </MudStack>
+                </MudStack>
+            </MudItem>
+        </MudGrid>
+
+        <MudStack Class="mt-8">
+            <MudDivider />
+            <MudStack Row="true" Justify="Justify.Center">
+                <MudTooltip Text="GitHub" Color="Color.Primary" Delay="300">
+                    <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Primary" Href="https://github.com/CodeBeamOrg/CodeBeam.MudBlazor.Extensions" Target="_blank" />
+                </MudTooltip>
+
+                <MudTooltip Text="NuGet" Color="Color.Primary" Delay="300">
+                    <MudIconButton Icon="@Brands.NuGet" Color="Color.Primary" Href="https://www.nuget.org/packages?q=CodeBeam.MudBlazor&includeComputedFrameworks=true&prerel=true" Target="_blank" />
+                </MudTooltip>
+
+                <MudTooltip Text="Web" Color="Color.Primary" Delay="300">
+                    <MudIconButton Icon="@Icons.Material.Filled.Language" Color="Color.Primary" Href="https://mudextensions.codebeam.org/" Target="_blank" />
+                </MudTooltip>
+            </MudStack>
         </MudStack>
     </MudContainer>
 </MudPage>
