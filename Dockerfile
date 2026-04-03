@@ -1,12 +1,20 @@
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
 
-COPY CodeBeam.Website/*.csproj CodeBeam.Website/
-RUN dotnet restore CodeBeam.Website/CodeBeam.Website.csproj
+# csproj kopyala (cache için)
+COPY CodeBeam.Website/CodeBeam.Website/CodeBeam.Website.csproj CodeBeam.Website/CodeBeam.Website/
+COPY CodeBeam.Website/CodeBeam.Website.Client/CodeBeam.Website.Client.csproj CodeBeam.Website/CodeBeam.Website.Client/
 
+# restore
+RUN dotnet restore CodeBeam.Website/CodeBeam.Website/CodeBeam.Website.csproj
+
+# tüm dosyaları kopyala
 COPY . .
-RUN dotnet publish CodeBeam.Website/CodeBeam.Website.csproj -c Release -o /app/publish
 
+# publish
+RUN dotnet publish CodeBeam.Website/CodeBeam.Website/CodeBeam.Website.csproj -c Release -o /app/publish
+
+# runtime
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime
 WORKDIR /app
 
