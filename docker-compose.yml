@@ -1,0 +1,13 @@
+services:
+  website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: codebeam-website
+    restart: unless-stopped
+    networks:
+      - edge
+
+networks:
+  edge:
+    external: true
