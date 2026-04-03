@@ -82,10 +82,15 @@
 
     <MudDrawer @bind-Open="_isOpen" Breakpoint="Breakpoint.None" ClipMode="DrawerClipMode.Always" Variant="DrawerVariant.Temporary">
         <MudNavMenu>
-            <MudNavLink Href="/">Home</MudNavLink>
-            <MudNavLink Href="/#vision">Vision</MudNavLink>
-            <MudNavLink Href="/#ultimateauth">Products</MudNavLink>
-            <MudNavLink Href="/#donate">Donate</MudNavLink>
+            <MudNavLink Href="/#home" Icon="@Icons.Material.Filled.Home">Home</MudNavLink>
+            <MudNavLink Href="/#vision" Icon="@Icons.Material.Filled.Api">Vision</MudNavLink>
+            <MudNavGroup Title="Products" Icon="@Icons.Material.Filled.Dvr">
+                <MudNavLink Href="/#ultimateauth">UltimateAuth</MudNavLink>
+                <MudNavLink Href="/#mudblazor-extensions">MudBlazor Extensions</MudNavLink>
+                <MudNavLink Href="/#bcss">BCSS</MudNavLink>
+                <MudNavLink Href="/#googleapis">GoogleApis Blazor</MudNavLink>
+            </MudNavGroup>
+            <MudNavLink Href="/#donate" Icon="@Icons.Material.Filled.VolunteerActivism">Donate</MudNavLink>
         </MudNavMenu>
     </MudDrawer>
     <MudMainContent>
