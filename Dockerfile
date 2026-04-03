@@ -1,8 +1,13 @@
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
 
+COPY CodeBeam.Website/*.csproj CodeBeam.Website/
+COPY CodeBeam.Website.Client/*.csproj CodeBeam.Website.Client/
+
+RUN dotnet restore CodeBeam.Website/CodeBeam.Website.csproj
+
 COPY . .
-RUN dotnet restore
+
 RUN dotnet publish CodeBeam.Website/CodeBeam.Website.csproj -c Release -o /app/publish
 
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime
