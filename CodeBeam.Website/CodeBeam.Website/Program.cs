@@ -78,7 +78,7 @@ app.MapGet("/api/github/all", async ([FromServices] StatsService service) =>
         
     }
 
-    var ultimateAuthTask = Get("UltimateAuth", null);
+    var ultimateAuthTask = Get("UltimateAuth", "CodeBeam.UltimateAuth.Core");
     var mudTask = Get("CodeBeam.MudBlazor.Extensions", "CodeBeam.MudBlazor.Extensions");
     var bcssTask = Get("BCSS", "CodeBeam.BCSS");
 
